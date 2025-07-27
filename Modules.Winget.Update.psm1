@@ -1,12 +1,16 @@
 function Update-Packages {
 
+    [CmdletBinding()]
+    param (
+        
+    )
+
     Write-Verbose "Getting all available Updates"
 
     $UpgradeArray = @((winget list --upgrade-available) -match "[A-Za-z0-9]\.[A-Za-z0-9]")
-    if ($null -eq $UpgradeArray) {
+    if (!($UpgradeArray)) {
 
         [System.Console]::WriteLine("No Packages need to be updated")
-        exit
 
     } else {
 
