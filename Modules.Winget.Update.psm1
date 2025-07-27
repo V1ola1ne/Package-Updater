@@ -1,4 +1,4 @@
-function Install-PackageUpdates {
+function Update-Packages {
 
     Write-Verbose "Getting all available Updates"
 
